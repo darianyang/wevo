@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 
 rm -f west.h5 binbounds.txt
 BSTATES="--bstate initial,9.5"
