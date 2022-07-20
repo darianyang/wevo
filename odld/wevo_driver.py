@@ -3,6 +3,7 @@ import logging
 import numpy as np
 import operator
 from westpa.core.we_driver import WEDriver
+from wevo import WEVO
 
 log = logging.getLogger(__name__)
 
