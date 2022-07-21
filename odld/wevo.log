@@ -1,0 +1,59 @@
+wevo - INFO - distance_matrix
+wevo - INFO - 
+[[0.         0.14799976 0.05299997 ... 2.74639988 2.83179951 2.67210007]
+ [0.14799976 0.         0.09499979 ... 2.89439964 2.97979927 2.82009983]
+ [0.05299997 0.09499979 0.         ... 2.79939985 2.88479948 2.72510004]
+ ...
+ [2.74639988 2.89439964 2.79939985 ... 0.         0.08539963 0.07429981]
+ [2.83179951 2.97979927 2.88479948 ... 0.08539963 0.         0.15969944]
+ [2.67210007 2.82009983 2.72510004 ... 0.07429981 0.15969944 0.        ]]
+wevo - INFO - Starting variance optimization: 3278342.2350985873
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 3721603.8611610653 accepted
+wevo - INFO - Variance move to 3721603.8611610653 accepted
+wevo - INFO - variance after selection: 3720865.223178031
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 4145497.5762470593 accepted
+wevo - INFO - Variance move to 4145497.5762470593 accepted
+wevo - INFO - variance after selection: 4142993.2626116048
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 4540294.540490007 accepted
+wevo - INFO - Variance move to 4540294.540490007 accepted
+wevo - INFO - variance after selection: 4571883.756277529
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 5020506.448353609 accepted
+wevo - INFO - Variance move to 5020506.448353609 accepted
+wevo - INFO - variance after selection: 5019426.3278334765
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 5461343.994938033 accepted
+wevo - INFO - Variance move to 5461343.994938033 accepted
+wevo - INFO - variance after selection: 5460237.439361605
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 5924562.2970687 accepted
+wevo - INFO - Variance move to 5924562.2970687 accepted
+wevo - INFO - variance after selection: 5923233.749871851
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 6389448.504154559 accepted
+wevo - INFO - Variance move to 6389448.504154559 accepted
+wevo - INFO - variance after selection: 6388626.128591299
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 6869600.232437045 accepted
+wevo - INFO - Variance move to 6869600.232437045 accepted
+wevo - INFO - variance after selection: 6868705.708798603
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 7358824.10516348 accepted
+wevo - INFO - Variance move to 7358824.10516348 accepted
+wevo - INFO - variance after selection: 7357494.02295336
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 7851634.639576091 accepted
+wevo - INFO - Variance move to 7851634.639576091 accepted
+wevo - INFO - variance after selection: 7873111.8139486145
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 8373968.365311004 accepted
+wevo - INFO - Variance move to 8373968.365311004 accepted
+wevo - INFO - variance after selection: 8372810.226719679
+wevo - INFO - Using greedy merge algo
+wevo - INFO - Variance move to 8862045.683363376 accepted
+wevo - INFO - Variance move to 8862045.683363376 accepted
+wevo - INFO - variance after selection: 8860497.363339689
+wevo - INFO - Using greedy merge algo
