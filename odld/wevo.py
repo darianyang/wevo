@@ -50,7 +50,7 @@ class WEVO:
     # see binless PR for details: https://github.com/westpa/westpa/pull/240/files
 
     #def __init__(self, segments, pcoords, weights):
-    def __init__(self, pcoords, weights, 
+    def __init__(self, pcoords, weights, maxcycles=100,
                  merge_dist=None,
                  char_dist=None,
                  distance=None,
@@ -72,6 +72,9 @@ class WEVO:
         weights : array
             Weight of each segment for the iteration. 
             The sum of all weights should be 1.0.
+        maxcycles : int
+            Limit the amount of variance optimization iterations.
+            Prevents infinite optimization with some test systems.
 
         # REVO
         dist_exponent : int
@@ -109,6 +112,7 @@ class WEVO:
         #self.segments = segments
         self.pcoords = pcoords
         self.weights = weights
+        self.maxcycles = maxcycles
 
         self.pmin = pmin
         self.pmax = pmax
@@ -125,6 +129,7 @@ class WEVO:
 
         self.merge_dist = merge_dist
         self.merge_alg = merge_alg
+        logger.info(f"Using {self.merge_alg} merge algorithm")
 
         # the distance metric 
         # TODO: this may be equivalent to pcoords array (only used in dist matrix calc)
@@ -143,17 +148,10 @@ class WEVO:
         #image = self.distance.image(init_state)
         #self.image_dtype = image.dtype
 
-    def decide_split_merge(self):
-        '''
-        Test function for picking which segments to split and merge.
-        For now, split the highest weight and merge the lowest weight.
-        TODO
-        '''
-        pass
-
     def _all_to_all_distance(self):
         '''
         Calculate the pairwise all-to-all distances between segments.
+        TODO: JML sort function can turn distance matrix to paired list.
 
         Returns
         -------
@@ -229,7 +227,7 @@ class WEVO:
 
         # set the novelty values
         walker_novelties = np.array([self._novelty(walker_weights[i], num_walker_copies[i])
-                               for i in range(num_walkers)])
+                                     for i in range(num_walkers)])
 
         # the value to be optimized
         variation = 0
@@ -302,7 +300,10 @@ class WEVO:
         logger.info("Starting variance optimization: {}".format(variation))
 
         productive = True
-        while productive:
+        self.count = 0
+        # limit the amount of optimization cycles (count) with max cycles arg
+        while productive and self.count <= self.maxcycles:
+            self.count += 1
             productive = False
             # find min and max walker_variationss, alter new_amp
 
@@ -328,14 +329,21 @@ class WEVO:
             if len(max_tups) > 0:
                 max_value, max_idx = max(max_tups)
 
+            logger.info(f"Running cycle {self.count}")
             merge_pair = []
             if self.merge_alg == 'pairs':
-                # pot_merge_pairs = self._find_eligible_merge_pairs(new_walker_weights, distance_matrix, max_idx, new_num_walker_copies)
-                # merge_pair= self._calc_variation_loss(walker_variations, new_walker_weights, pot_merge_pairs)
                 # use greedy for now (original REVO implementation)
+
+                # pot_merge_pairs = self._find_eligible_merge_pairs(new_walker_weights,
+                #                                                   distance_matrix, 
+                #                                                   max_idx, 
+                #                                                   new_num_walker_copies)
+
+                # merge_pair = self._calc_variation_loss(walker_variations, 
+                #                                        new_walker_weights, 
+                #                                        pot_merge_pairs)
                 pass
             elif self.merge_alg == 'greedy':
-                logger.info("Using greedy merge algo")
                 # walker with the lowest walker_variations (distance to other walkers)
                 # will be tagged for merging (stored in min_idx)
                 min_tups = [(value, i) for i,value in enumerate(walker_variations)
@@ -367,10 +375,12 @@ class WEVO:
                         closewalks_dists = [(distance_matrix[min_idx, i], i) for i in closewalks
                                             if distance_matrix[min_idx, i] < (self.merge_dist)]
 
-                    # if any were found set this as the closewalk
-                    if len(closewalks_dists) > 0:
-                        closedist, closewalk = min(closewalks_dists)
-                        merge_pair = [min_idx, closewalk]
+                    # first check if it even exists as local variable
+                    if 'closewalks_dists' in locals():
+                        # if any were found set this as the closewalk
+                        if len(closewalks_dists) > 0:
+                            closedist, closewalk = min(closewalks_dists)
+                            merge_pair = [min_idx, closewalk]
 
             else:
                 raise ValueError('Unrecognized value for merge_alg in REVO')
@@ -387,12 +397,23 @@ class WEVO:
                 new_num_walker_copies[max_idx] += 1
 
                 # re-determine variation function, and walker_variations values
-                new_variation, walker_variations = self._calc_variation(new_walker_weights, new_num_walker_copies, distance_matrix)
+                new_variation, walker_variations = self._calc_variation(new_walker_weights,
+                                                                        new_num_walker_copies,
+                                                                        distance_matrix)
 
-                if new_variation > variation:
+                # variation increaces and walker to squash not already present 
+                # TODO: should it be min_idx or closewalk or both?
+                # this works with both but might be better to check after the random step
+                # just not sure if that would take care of the infinite opt increase loop
+                # I think this current implemetation makes sense, since you won't add to 
+                # the merge group walker position if either of the merge pair values are
+                # already appended to be merged into each other
+                if new_variation > variation and \
+                merge_pair[0] not in merge_groups[merge_pair[1]] and \
+                merge_pair[1] not in merge_groups[merge_pair[0]]:
                     variations.append(new_variation)
 
-                    logger.info("Variance move to {} accepted".format(new_variation))
+                    #logging.info("Variance move to {} accepted".format(new_variation))
                     logger.info("Variance move to {} accepted".format(new_variation))
 
                     productive = True
@@ -424,10 +445,16 @@ class WEVO:
 
                     # add the squash index to the merge group
                     merge_groups[keep_idx].append(squash_idx)
+                    #print(f"Added squash index {squash_idx} to merge group {keep_idx}:\n", merge_groups)
 
                     # add the indices of the walkers that were already
                     # in the merge group that was just squashed
                     merge_groups[keep_idx].extend(merge_groups[squash_idx])
+
+                    # TODO: somewhere around here, make sure that the merge groups being
+                    # added are not already present in the group
+                    # with ODLD i20 it seems like walker 8 is constantly being added, resulting
+                    # in an infinite loop with increasing variance
 
                     # reset the merge group that was just squashed to empty
                     merge_groups[squash_idx] = []
@@ -438,8 +465,8 @@ class WEVO:
 
                     # new variation for starting new stage
                     new_variation, walker_variations = self._calc_variation(new_walker_weights,
-                                                                          new_num_walker_copies,
-                                                                          distance_matrix)
+                                                                            new_num_walker_copies,
+                                                                            distance_matrix)
                     variations.append(new_variation)
 
                     #logging.info("variance after selection: {}".format(new_variation))
@@ -465,7 +492,7 @@ class WEVO:
         #     walker_record['walker_idx'] = np.array([walker_idx])
 
         #return walker_actions, variations[-1]
-        return merge_groups, walker_clone_nums, variations[-1]
+        return walker_clone_nums, merge_groups, variations[-1]
 
     def resample(self):
         """
@@ -496,18 +523,17 @@ class WEVO:
 
         # logging.info("distance_matrix")
         # logging.info("\n{}".format(str(np.array(distance_matrix))))
-        logger.info("distance_matrix")
-        logger.info("\n{}".format(str(np.array(distance_matrix))))
+        #logger.info("distance_matrix")
+        #logger.info("\n{}".format(str(np.array(distance_matrix))))
 
         # determine cloning and merging actions to be performed, by
         # maximizing the variation, i.e. the Decider
         # resampling_data, variation = self.decide(num_walker_copies, distance_matrix)
-        # print(resampling_data, variation)
 
-        merge, split, variation = self.decide(num_walker_copies, distance_matrix)
-        print(f"\nTo merge: {len(merge)} total \n {merge}")
-        print(f"\nTo split: {len(split)} total \n {split}")
-        print(f"\nFinal Variation: {variation} \n")
+        split, merge, variation = self.decide(num_walker_copies, distance_matrix)
+        logger.info(f"\nTo merge: {len(merge)} total \n {merge}")
+        logger.info(f"\nTo split: {len(split)} total \n {split}")
+        logger.info(f"WEVO ran for {self.count} cycles")
 
 
         # # convert the target idxs and decision_id to feature vector arrays
@@ -529,6 +555,8 @@ class WEVO:
 
         # return resampled_walkers, resampling_data, resampler_data
 
+        return split, merge, variation
+
 
 if __name__ == '__main__':
     
@@ -536,29 +564,32 @@ if __name__ == '__main__':
     # pcoords = np.array([2.5, 3.0, 4.0, 3.2, 3.8])
     # weights = np.array([0.2, 0.1, 0.3, 0.15, 0.25])
 
-    # from odld (some get stuck e.g. iteration 20)
+    # from odld (some get stuck e.g. iteration 20), infinite opt with same merge groups
     # TODO: test 2D and 3D pcoords (should work since distance matrix is Euclidean-based)
-    iteration = 50
+    iteration = 3
     print(f"\nTesting ODLD WE Iteration {iteration}")
     import h5py
-    f = h5py.File("west.h5", "r")
-    pcoords = f[f"iterations/iter_{iteration:08d}"]["pcoord"][:,0]
+    f = h5py.File("west_default.h5", "r")
+    pcoords = f[f"iterations/iter_{iteration:08d}"]["pcoord"][:,-1]
     pcoords = pcoords.reshape(-1)
     weights = f[f"iterations/iter_{iteration:08d}"]["seg_index"]["weight"]
 
     print(f"\nPCOORDS: {len(pcoords)} total \n {pcoords}")
-    print(f"\nWEIGHTS: {len(weights)} total \n {weights}")
+    print(f"\nWEIGHTS: {len(weights)} total \n {weights}\n")
 
     # initialize wevo
     #resample = WEVO(pcoords, weights, merge_dist=1, char_dist=0.608)
-    resample = WEVO(pcoords, weights, merge_dist=0.5, char_dist=1.13)
+    resample = WEVO(pcoords, weights, merge_dist=1, char_dist=1.13, maxcycles=100)
 
     # got char dist of 0.608
     # dist_matrix = resample._all_to_all_distance()
     # print(np.mean(dist_matrix))
 
     # run wevo
-    resample.resample()
+    split, merge, variation = resample.resample()
+
+    # TODO: no split merge decisions at low ODLD iterations (1-4)
+    # seems like initial splitting needed for wevo to start working
 
     """
     1. get distance matrix (_all_to_all_distance)

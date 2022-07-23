@@ -23,6 +23,10 @@ bintargetcount = 10  # number of walkers per bin
 nbins = [10]  # You will have prod(binsperdim)+numberofdim*(2*splitIsolated) bins total
 pcoordlength = 2  # length of the pcoord
 
+# wevo settings
+#bintargetcount = 100  # number of walkers per bin
+#nbins = [1]  # You will have prod(binsperdim)+numberofdim*(2*splitIsolated) bins total
+
 
 class ODLDPropagator(WESTPropagator):
     def __init__(self, rc=None):
@@ -37,7 +41,8 @@ class ODLDPropagator(WESTPropagator):
         self.sigma = 0.001 ** (0.5)  # friction coefficient
 
         self.A = 2
-        self.B = 30
+        # 30 for a more difficult system, 5 for easier barrier
+        self.B = 5
         self.C = 0.5
         self.x0 = 1
 
