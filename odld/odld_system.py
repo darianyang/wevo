@@ -16,12 +16,11 @@ from westpa.core.binning import RecursiveBinMapper
 PI = np.pi
 log = logging.getLogger("westpa.rc")
 
+# THESE ARE THE FOUR THINGS YOU SHOULD CHANGE
 pcoord_len = 21
 pcoord_dtype = np.float32
-# THESE ARE THE FOUR THINGS YOU SHOULD CHANGE
 bintargetcount = 10  # number of walkers per bin
 nbins = [10]  # You will have prod(binsperdim)+numberofdim*(2*splitIsolated) bins total
-pcoordlength = 2  # length of the pcoord
 
 # wevo settings
 #bintargetcount = 100  # number of walkers per bin

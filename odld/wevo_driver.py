@@ -138,38 +138,44 @@ class WEVODriver(WEDriver):
     #     log.debug('available initial states: {!r}'.format(self.avail_initial_states))
 
     # ATB resampler base
-    def _segment_index_converter(self, mode, pcoords, curr_pcoords, scaled_diffs):
+    # def _segment_index_converter(self, mode, pcoords, curr_pcoords, scaled_diffs):
 
-        if mode == "split":
-            to_split_idx = np.argmin(scaled_diffs)
-            curr_pcoords_to_split = curr_pcoords[:,-1][to_split_idx]
-            converted_idx = int(np.where(pcoords[:,0] == curr_pcoords_to_split)[0])
+    #     if mode == "split":
+    #         to_split_idx = np.argmin(scaled_diffs)
+    #         curr_pcoords_to_split = curr_pcoords[:,-1][to_split_idx]
+    #         converted_idx = int(np.where(pcoords[:,0] == curr_pcoords_to_split)[0])
 
-            return converted_idx
+    #         return converted_idx
 
-        if mode == "merge":
-            to_merge_idx = np.argsort(-scaled_diffs,axis=0)[:2]
-            curr_pcoords_to_merge = curr_pcoords[:,-1][to_merge_idx]
-            if curr_pcoords_to_merge.shape[0] > 1:
-                converted_idx = np.zeros(curr_pcoords_to_merge.shape[0], dtype=int)
-                for idx, val in enumerate(curr_pcoords_to_merge):
-                    converted_idx[idx] = int(np.where(pcoords[:,0] == val)[0])
-            else: 
-                converted_idx = np.where(pcoords[:,0] == curr_pcoords_to_merge)[0]
+    #     if mode == "merge":
+    #         to_merge_idx = np.argsort(-scaled_diffs,axis=0)[:2]
+    #         curr_pcoords_to_merge = curr_pcoords[:,-1][to_merge_idx]
+    #         if curr_pcoords_to_merge.shape[0] > 1:
+    #             converted_idx = np.zeros(curr_pcoords_to_merge.shape[0], dtype=int)
+    #             for idx, val in enumerate(curr_pcoords_to_merge):
+    #                 converted_idx[idx] = int(np.where(pcoords[:,0] == val)[0])
+    #         else: 
+    #             converted_idx = np.where(pcoords[:,0] == curr_pcoords_to_merge)[0]
 
-            return converted_idx
+    #         return converted_idx
 
     def _split_by_wevo(self, bin, to_split, split_into):
-
+        
+        # remove the walker being split
         bin.remove(to_split)
+        # get the n split walker children
         new_segments_list = self._split_walker(to_split, split_into, bin)
+        # add all new split walkers back into bin, maintaining history
         bin.update(new_segments_list)
 
 
-    def _merge_by_wevo(self, bin, to_merge):
+    def _merge_by_wevo(self, bin, to_merge, cumul_weight=None):
 
+        # removes every walker in to_merge 
         bin.difference_update(to_merge)
-        new_segment, parent = self._merge_walkers(to_merge, None, bin)
+        #new_segment, parent = self._merge_walkers(to_merge, None, bin)
+        new_segment, parent = self._merge_walkers(to_merge, cumul_weight, bin)
+        # add in new merged walker
         bin.add(new_segment)
 
 
@@ -184,6 +190,7 @@ class WEVODriver(WEDriver):
         self._check_pre()
 
         # dummy resampling block
+        # TODO: wevo is really only using one bin
         # ibin only needed right now for temp split merge option (TODO)
         for ibin, bin in enumerate(self.next_iter_binning):
             # TODO: is this needed?
@@ -267,13 +274,23 @@ class WEVODriver(WEDriver):
                     #print("split: ", split[i])
                     #print("merge len: ", len(merge[i]))
                     # split into n walkers based on split value
+                    
+                    # TODO: should I split or merge first? does order matter?
+                    # here I'm doing them both on a segment-by-segment basis
                     if split[i] != 0:
                         self._split_by_wevo(bin, seg, split[i])
                     if len(merge[i]) != 0:
                         # list of all segs objects in the current merge list element
                         to_merge = [segment for num, segment in enumerate(segments) if num in merge[i]]
+                        # cumul_weight should be the total weights of all the segments being merged
                         #cumul_weight = np.add.accumulate(weights)
+                        #self._merge_by_wevo(bin, to_merge, cumul_weight)
                         self._merge_by_wevo(bin, to_merge)
+
+                # make bin target count consistent via splitting high weight and merging low weight
+                # TODO: maybe do this with variance sorting instead of weight sorting?
+                # if self.do_adjust_counts:
+                #     self._adjust_count(ibin)
 
                 print("Final weight sum: ", np.sum(weights))
 

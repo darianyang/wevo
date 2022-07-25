@@ -129,7 +129,7 @@ class WEVO:
 
         self.merge_dist = merge_dist
         self.merge_alg = merge_alg
-        logger.info(f"Using {self.merge_alg} merge algorithm")
+        #logger.info(f"Using {self.merge_alg} merge algorithm")
 
         # the distance metric 
         # TODO: this may be equivalent to pcoords array (only used in dist matrix calc)
@@ -329,7 +329,7 @@ class WEVO:
             if len(max_tups) > 0:
                 max_value, max_idx = max(max_tups)
 
-            logger.info(f"Running cycle {self.count}")
+            #logger.info(f"Running cycle {self.count}")
             merge_pair = []
             if self.merge_alg == 'pairs':
                 # use greedy for now (original REVO implementation)
@@ -414,7 +414,7 @@ class WEVO:
                     variations.append(new_variation)
 
                     #logging.info("Variance move to {} accepted".format(new_variation))
-                    logger.info("Variance move to {} accepted".format(new_variation))
+                    #logger.info("Variance move to {} accepted".format(new_variation))
 
                     productive = True
                     variation = new_variation
@@ -470,11 +470,11 @@ class WEVO:
                     variations.append(new_variation)
 
                     #logging.info("variance after selection: {}".format(new_variation))
-                    logger.info("variance after selection: {}".format(new_variation))
+                    #logger.info("variance after selection: {}".format(new_variation))
 
                 # if not productive
                 else:
-                    logger.info("Not productive")
+                    #logger.info("Not productive")
                     new_num_walker_copies[min_idx] = 1
                     new_num_walker_copies[closewalk] = 1
                     new_num_walker_copies[max_idx] -= 1
@@ -531,9 +531,10 @@ class WEVO:
         # resampling_data, variation = self.decide(num_walker_copies, distance_matrix)
 
         split, merge, variation = self.decide(num_walker_copies, distance_matrix)
+        logger.info(f"WEVO ran for {self.count} cycles")
         logger.info(f"\nTo merge: {len(merge)} total: {np.sum([len(i) for i in merge])} being merged \n {merge}")
         logger.info(f"\nTo split: {len(split)} total: {np.sum(split)} being split \n {split}")
-        logger.info(f"WEVO ran for {self.count} cycles")
+        #logger.info(f"Final variation = {variation}\n")
 
 
         # # convert the target idxs and decision_id to feature vector arrays
@@ -560,16 +561,12 @@ class WEVO:
 
 if __name__ == '__main__':
     
-    # generate some fake pcoords and weights
-    # pcoords = np.array([2.5, 3.0, 4.0, 3.2, 3.8])
-    # weights = np.array([0.2, 0.1, 0.3, 0.15, 0.25])
-
-    # from odld (some get stuck e.g. iteration 20), infinite opt with same merge groups
+    # using example pcoords and weights from ODLD simulation with default H&K resampler
     # TODO: test 2D and 3D pcoords (should work since distance matrix is Euclidean-based)
-    iteration = 20
+    iteration = 75
     print(f"\nTesting ODLD WE Iteration {iteration}")
     import h5py
-    f = h5py.File("west_default.h5", "r")
+    f = h5py.File("west_default100.h5", "r")
     pcoords = f[f"iterations/iter_{iteration:08d}"]["pcoord"][:,-1]
     pcoords = pcoords.reshape(-1)
     weights = f[f"iterations/iter_{iteration:08d}"]["seg_index"]["weight"]
@@ -590,14 +587,13 @@ if __name__ == '__main__':
 
     # TODO: no split merge decisions at low ODLD iterations (1-4)
     # seems like initial splitting needed for wevo to start working
-    # or a larger amount of initial walkers (needs more knobs to optimize)
-
-    # TODO: sometimes the split merge amounts aren't consistent in full westpa run
-    # why is this the case? maybe because of the binning scheme
+    # because: needs larger amount of initial walkers (needs more knobs to optimize)
 
     # TODO: in westpa the weights begin to not add to 1 after n iterations
+    # make sure the split and merge operations/order are accurate
+    # the parent_ids being saved in west.h5 may also not be accurate
 
-    """
+    """ WEVO
     1. get distance matrix (_all_to_all_distance)
     2. determine split-merge decisions from variance opt (decide)
         - _calc_variation : calcs total V and per-walker v

@@ -1,524 +1,304 @@
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 2856.1592819207153
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 4083.525954993058 accepted
-wevo - INFO - variance after selection: 4084.7502072274947
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 5270.195639456332 accepted
-wevo - INFO - variance after selection: 5270.135454477168
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 6423.349773270232 accepted
-wevo - INFO - variance after selection: 6423.269016779344
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 7550.362157835398 accepted
-wevo - INFO - variance after selection: 7550.674463826266
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 8656.250885819885 accepted
-wevo - INFO - variance after selection: 8656.228333685804
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 9741.839159770761 accepted
-wevo - INFO - variance after selection: 9741.851407318672
-wevo - INFO - Running cycle 7
-wevo - INFO - Variance move to 10810.472747232478 accepted
-wevo - INFO - variance after selection: 10811.066640685825
-wevo - INFO - Running cycle 8
-wevo - INFO - Variance move to 11862.397993484807 accepted
-wevo - INFO - variance after selection: 11862.081099178824
-wevo - INFO - Running cycle 9
-wevo - INFO - Variance move to 12896.735521006634 accepted
-wevo - INFO - variance after selection: 12901.09773925732
-wevo - INFO - Running cycle 10
-wevo - INFO - Variance move to 13886.017222325658 accepted
-wevo - INFO - variance after selection: 13861.932343370805
-wevo - INFO - Running cycle 11
-wevo - INFO - Variance move to 14830.520629811383 accepted
-wevo - INFO - variance after selection: 14816.164763326502
-wevo - INFO - Running cycle 12
-wevo - INFO - Not productive
+wevo - INFO - Starting variance optimization: 2767.711491918344
+wevo - INFO - WEVO ran for 15 cycles
 wevo - INFO - 
-To merge: 50 total: 11 being merged 
- [[], [38, 6, 18], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [45, 12, 26], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [28, 46, 30, 19, 34], [], [], [], [], [], []]
+To merge: 50 total: 14 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [4, 3, 19], [], [], [], [], [], [35, 9, 37, 39, 5, 11], [], [], [], [], [], [], [], [], [], [], [8, 49, 25, 42, 26], [], [], [], [], [], [], [], []]
 wevo - INFO - 
-To split: 50 total: 11 being split 
- [10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-wevo - INFO - WEVO ran for 12 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 18838.73752647568
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 20665.835358265445 accepted
-wevo - INFO - variance after selection: 20665.995500138004
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 22427.143464340326 accepted
-wevo - INFO - variance after selection: 22425.92521593527
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 24270.508314284914 accepted
-wevo - INFO - variance after selection: 24267.38445278626
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 25467.84353209625 accepted
-wevo - INFO - variance after selection: 25448.853170583752
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 26490.008160197285 accepted
-wevo - INFO - variance after selection: 26464.7416841959
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 27257.74650182213 accepted
-wevo - INFO - variance after selection: 27227.238090160714
-wevo - INFO - Running cycle 7
-wevo - INFO - Variance move to 27903.674740632352 accepted
-wevo - INFO - variance after selection: 27871.2748108583
-wevo - INFO - Running cycle 8
-wevo - INFO - Variance move to 28494.056607933384 accepted
-wevo - INFO - variance after selection: 28461.296014182568
-wevo - INFO - Running cycle 9
-wevo - INFO - Variance move to 28988.402100621202 accepted
-wevo - INFO - variance after selection: 28952.67860653348
-wevo - INFO - Running cycle 10
-wevo - INFO - Not productive
+To split: 50 total: 14 being split 
+ [0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 0
+wevo - INFO - WEVO ran for 1 cycles
 wevo - INFO - 
-To merge: 51 total: 9 being merged 
- [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [14, 31, 29, 2, 5, 9, 6, 0, 3], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
+To merge: 1 total: 0 being merged 
+ [[]]
 wevo - INFO - 
-To split: 51 total: 9 being split 
- [0, 1, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+To split: 1 total: 0 being split 
+ [0]
+wevo - INFO - Starting variance optimization: 18942.820351629496
+wevo - INFO - WEVO ran for 15 cycles
+wevo - INFO - 
+To merge: 50 total: 14 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [43, 28, 26, 0, 10, 4, 3, 6, 8, 2], [], [], [], [], [], [], [], [], [], [17, 40, 27, 11], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
+wevo - INFO - 
+To split: 50 total: 14 being split 
+ [0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 0.161229519758721
+wevo - INFO - WEVO ran for 101 cycles
+wevo - INFO - 
+To merge: 4 total: 0 being merged 
+ [[], [], [], []]
+wevo - INFO - 
+To split: 4 total: 101 being split 
+ [50, 0, 51, 0]
+wevo - INFO - Starting variance optimization: 27018.896438152802
+wevo - INFO - WEVO ran for 15 cycles
+wevo - INFO - 
+To merge: 47 total: 14 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [32, 28, 4], [], [], [], [], [], [26, 25, 36], [], [], [], [], [], [], [], [], [], [], [], [], [29, 13, 14, 16, 10, 15, 3, 0], [], [], []]
+wevo - INFO - 
+To split: 47 total: 14 being split 
+ [0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 2334.0970869925363
+wevo - INFO - WEVO ran for 66 cycles
+wevo - INFO - 
+To merge: 79 total: 65 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [59, 41, 57, 20, 16, 68, 2, 1, 29, 72, 44, 23, 31, 48, 27, 18, 21, 55, 26, 56, 34, 33, 76, 38, 13, 39, 19, 4, 67, 51, 11, 62, 53, 74, 37, 9, 22, 0, 10, 14, 32, 7, 35, 36, 12, 46, 63, 71, 73, 69, 64, 17, 66, 47, 52, 75, 5, 60, 42, 77, 40, 3, 6, 8, 28]]
+wevo - INFO - 
+To split: 79 total: 65 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 13, 0, 0, 0, 3, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 124643.12029419566
+wevo - INFO - WEVO ran for 40 cycles
+wevo - INFO - 
+To merge: 72 total: 39 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [53, 61, 20, 52, 29, 42, 43, 41, 26, 6, 22], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [55, 18, 10, 11, 17, 12, 16, 2, 36, 14, 23, 35, 15, 5, 30, 44, 19, 24, 33, 0, 8, 9, 32, 21, 25, 31, 3, 27], [], [], []]
+wevo - INFO - 
+To split: 72 total: 39 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 3, 0, 7, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 7255.195289942327
+wevo - INFO - WEVO ran for 56 cycles
+wevo - INFO - 
+To merge: 64 total: 55 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [27, 36, 24, 22, 20, 35, 5, 19, 29, 0, 30, 26, 17, 1, 28, 3, 4, 45, 9, 10, 2, 41, 25, 38, 34, 43, 12, 32, 7, 13, 54, 55, 18, 31, 63, 57, 47, 39, 58, 16, 51, 33, 60, 8, 53, 21, 15, 42, 50, 48, 11, 44, 14, 59, 49], []]
+wevo - INFO - 
+To split: 64 total: 55 being split 
+ [0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0, 0, 21, 0, 0]
+wevo - INFO - Starting variance optimization: 166760.2696254676
+wevo - INFO - WEVO ran for 41 cycles
+wevo - INFO - 
+To merge: 76 total: 40 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [63, 49, 10, 36, 39, 32, 24, 4, 34, 1, 15, 50, 11, 20, 33, 41, 30, 37, 8, 44, 38, 42, 2, 26, 22, 46, 5, 18, 21, 29, 13, 3, 7, 14, 25, 19, 6, 23, 17, 9], [], [], [], []]
+wevo - INFO - 
+To split: 76 total: 40 being split 
+ [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 8, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 24390.270319481737
+wevo - INFO - WEVO ran for 55 cycles
+wevo - INFO - 
+To merge: 61 total: 54 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [11, 3, 22, 10, 5, 19, 45, 54, 21, 20, 2, 26, 34, 46, 49, 41, 14, 43, 47, 0, 15, 40, 53, 4, 44, 55, 29, 6, 1, 36, 28, 30, 39, 16, 51, 56, 50, 42, 37, 31, 12, 52, 32, 8, 23, 7, 38, 35, 48, 27, 25, 33, 18, 13], [], [], []]
+wevo - INFO - 
+To split: 61 total: 54 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 24, 2]
+wevo - INFO - Starting variance optimization: 129828.7887503638
+wevo - INFO - WEVO ran for 20 cycles
+wevo - INFO - 
+To merge: 68 total: 19 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [63, 0, 38, 37, 29, 35, 10, 16, 9, 28, 12, 6, 21, 18, 5, 14, 4, 22], [], [], [53], [], [], [], [], []]
+wevo - INFO - 
+To split: 68 total: 19 being split 
+ [0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 0
+wevo - INFO - WEVO ran for 1 cycles
+wevo - INFO - 
+To merge: 1 total: 0 being merged 
+ [[]]
+wevo - INFO - 
+To split: 1 total: 0 being split 
+ [0]
+wevo - INFO - Starting variance optimization: 39655.59851692131
+wevo - INFO - WEVO ran for 24 cycles
+wevo - INFO - 
+To merge: 51 total: 23 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [31, 14, 30, 26], [], [], [29, 5, 20, 18, 0, 19, 24, 1, 13, 11, 6, 15, 12, 16, 9, 2, 4, 7, 22], []]
+wevo - INFO - 
+To split: 51 total: 23 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 1, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2]
+wevo - INFO - Starting variance optimization: 134266.95330690936
+wevo - INFO - WEVO ran for 27 cycles
+wevo - INFO - 
+To merge: 67 total: 26 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [55, 49, 48, 43, 5], [], [], [], [47, 3, 10, 9, 1, 7, 29, 0, 2, 28, 13, 30, 32, 4, 25, 40, 27, 6, 39, 26, 8], [], [], [], [], []]
+wevo - INFO - 
+To split: 67 total: 26 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 3, 0, 0, 0, 0, 0, 0, 9, 10, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 1.95929060156658
+wevo - INFO - WEVO ran for 8 cycles
+wevo - INFO - 
+To merge: 10 total: 7 being merged 
+ [[], [], [], [], [], [], [], [], [1, 4, 3, 2, 9, 5, 6], []]
+wevo - INFO - 
+To split: 10 total: 7 being split 
+ [4, 0, 0, 0, 0, 0, 0, 3, 0, 0]
+wevo - INFO - Starting variance optimization: 26389.56543353344
+wevo - INFO - WEVO ran for 22 cycles
+wevo - INFO - 
+To merge: 37 total: 21 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [6, 3, 4, 7, 8, 1, 0, 2], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [10], [], [], [], [], [], [], [27, 9, 14, 20, 12, 5, 19, 16, 24, 21, 29, 13], []]
+wevo - INFO - 
+To split: 37 total: 21 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 15, 0, 5]
+wevo - INFO - Starting variance optimization: 113919.76708657543
 wevo - INFO - WEVO ran for 10 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 0.00011526700655048625
-wevo - INFO - Running cycle 1
+wevo - INFO - 
+To merge: 65 total: 9 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [14], [], [61, 12, 30, 28, 9, 1], [], [62], [], [58], [], [], [], [], [], [], []]
+wevo - INFO - 
+To split: 65 total: 9 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 50.44575994902633
+wevo - INFO - WEVO ran for 12 cycles
+wevo - INFO - 
+To merge: 14 total: 11 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [6, 0, 10, 9, 7, 8, 1, 12, 5, 4, 2]]
+wevo - INFO - 
+To split: 14 total: 11 being split 
+ [0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0]
+wevo - INFO - Starting variance optimization: 29750.131283014143
+wevo - INFO - WEVO ran for 18 cycles
+wevo - INFO - 
+To merge: 32 total: 17 being merged 
+ [[], [], [], [], [], [], [], [], [2, 1, 3, 12, 0, 6, 7], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [25, 31, 28, 22, 27, 20, 30, 16, 17, 4], [], [], [], [], [], [], [], []]
+wevo - INFO - 
+To split: 32 total: 17 being split 
+ [0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 123305.77459299326
+wevo - INFO - WEVO ran for 17 cycles
+wevo - INFO - 
+To merge: 66 total: 16 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [33, 8, 40, 62, 10, 48], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [16, 46, 43, 1, 15, 0, 4, 36, 11, 9], [], []]
+wevo - INFO - 
+To split: 66 total: 16 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 280.4795433963894
+wevo - INFO - WEVO ran for 13 cycles
+wevo - INFO - 
+To merge: 18 total: 12 being merged 
+ [[], [], [], [], [], [], [], [], [], [0, 4], [], [], [], [], [], [], [], [16, 6, 3, 10, 13, 14, 5, 8, 15, 7]]
+wevo - INFO - 
+To split: 18 total: 12 being split 
+ [0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 25285.52861727259
+wevo - INFO - WEVO ran for 12 cycles
+wevo - INFO - 
+To merge: 26 total: 11 being merged 
+ [[], [], [], [], [], [], [], [], [], [0], [], [], [], [], [], [], [], [], [], [], [], [], [23, 16, 10, 11, 20, 14, 21, 18, 13, 24], [], [], []]
+wevo - INFO - 
+To split: 26 total: 11 being split 
+ [0, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 1]
+wevo - INFO - Starting variance optimization: 101373.70450938372
+wevo - INFO - WEVO ran for 10 cycles
+wevo - INFO - 
+To merge: 60 total: 9 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [33, 18, 37, 6, 38, 7, 4, 1, 0], [], [], []]
+wevo - INFO - 
+To split: 60 total: 9 being split 
+ [0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 739.0820231478148
+wevo - INFO - WEVO ran for 15 cycles
+wevo - INFO - 
+To merge: 17 total: 14 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [12, 14, 11, 0, 3, 5, 4, 2, 7, 1, 9, 13, 10, 8]]
+wevo - INFO - 
+To split: 17 total: 14 being split 
+ [0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0]
+wevo - INFO - Starting variance optimization: 19463.141786836295
+wevo - INFO - WEVO ran for 7 cycles
+wevo - INFO - 
+To merge: 24 total: 6 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [18, 15, 11, 17, 10, 20], [], []]
+wevo - INFO - 
+To split: 24 total: 6 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0]
+wevo - INFO - Starting variance optimization: 75729.13988967179
+wevo - INFO - WEVO ran for 10 cycles
+wevo - INFO - 
+To merge: 55 total: 9 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [47, 27, 37, 24, 46, 9, 5, 4], [], [], [], [], [], [], [], [11], []]
+wevo - INFO - 
+To split: 55 total: 9 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 0.002208806727816609
+wevo - INFO - WEVO ran for 1 cycles
 wevo - INFO - 
 To merge: 2 total: 0 being merged 
  [[], []]
 wevo - INFO - 
 To split: 2 total: 0 being split 
  [0, 0]
+wevo - INFO - Starting variance optimization: 1325.9468232815586
+wevo - INFO - WEVO ran for 5 cycles
+wevo - INFO - 
+To merge: 12 total: 4 being merged 
+ [[], [], [], [2, 5], [], [], [], [], [], [], [], [9, 6]]
+wevo - INFO - 
+To split: 12 total: 4 being split 
+ [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0]
+wevo - INFO - Starting variance optimization: 32617.29745160587
+wevo - INFO - WEVO ran for 20 cycles
+wevo - INFO - 
+To merge: 33 total: 19 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [12, 8, 16, 6, 4, 3, 1, 7, 13], [], [], [], [], [], [], [], [], [], [], [], [], [], [18, 31, 27, 24, 28, 21, 19, 17, 22, 9], [], [], []]
+wevo - INFO - 
+To split: 33 total: 19 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 48404.18858905239
+wevo - INFO - WEVO ran for 16 cycles
+wevo - INFO - 
+To merge: 47 total: 15 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [23, 22], [27, 7], [], [], [], [34, 10, 20, 17, 4, 1, 11, 13, 5, 0, 2], [], []]
+wevo - INFO - 
+To split: 47 total: 15 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 0.07905427575432297
 wevo - INFO - WEVO ran for 1 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 13248.00906320908
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 15585.167194674197 accepted
-wevo - INFO - variance after selection: 15584.883865234762
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 17831.289974167215 accepted
-wevo - INFO - variance after selection: 17830.89168481619
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 20005.874442776516 accepted
-wevo - INFO - variance after selection: 20006.807207168473
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 22324.271932610383 accepted
-wevo - INFO - variance after selection: 22326.14454441481
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 24647.865479714364 accepted
-wevo - INFO - variance after selection: 24642.348741537346
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 27061.495654149363 accepted
-wevo - INFO - variance after selection: 27050.639286282283
-wevo - INFO - Running cycle 7
-wevo - INFO - Variance move to 29460.92650773278 accepted
-wevo - INFO - variance after selection: 29455.016363327777
-wevo - INFO - Running cycle 8
-wevo - INFO - Variance move to 31705.71918704213 accepted
-wevo - INFO - variance after selection: 31697.32435928695
-wevo - INFO - Running cycle 9
-wevo - INFO - Variance move to 32751.32108951724 accepted
-wevo - INFO - variance after selection: 32709.722929620388
-wevo - INFO - Running cycle 10
-wevo - INFO - Variance move to 35381.16920356206 accepted
-wevo - INFO - variance after selection: 35366.59166188234
-wevo - INFO - Running cycle 11
-wevo - INFO - Variance move to 36567.52942532384 accepted
-wevo - INFO - variance after selection: 36476.211255298826
-wevo - INFO - Running cycle 12
-wevo - INFO - Variance move to 39300.75349839841 accepted
-wevo - INFO - variance after selection: 39303.011738417496
-wevo - INFO - Running cycle 13
-wevo - INFO - Variance move to 40311.23680544209 accepted
-wevo - INFO - variance after selection: 40295.74386487021
-wevo - INFO - Running cycle 14
-wevo - INFO - Variance move to 40346.938817522605 accepted
-wevo - INFO - variance after selection: 40277.19349408368
-wevo - INFO - Running cycle 15
-wevo - INFO - Not productive
 wevo - INFO - 
-To merge: 46 total: 14 being merged 
- [[], [], [], [], [], [], [], [], [], [], [], [], [], [11, 37, 21], [], [], [], [], [], [], [], [], [], [40, 33], [], [], [], [], [], [], [], [], [], [], [39], [], [43, 7, 5, 4, 6, 0, 3], [], [], [], [], [], [], [], [28], []]
+To merge: 2 total: 0 being merged 
+ [[], []]
 wevo - INFO - 
-To split: 46 total: 14 being split 
- [0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0]
-wevo - INFO - WEVO ran for 15 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 0.9984531241071154
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 1.5071757502356797 accepted
-wevo - INFO - variance after selection: 1.4661147523115852
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 1.6723872099930068 accepted
-wevo - INFO - variance after selection: 1.524406525284453
-wevo - INFO - Running cycle 3
-wevo - INFO - Not productive
-wevo - INFO - 
-To merge: 5 total: 2 being merged 
- [[], [], [], [], [1, 2]]
-wevo - INFO - 
-To split: 5 total: 2 being split 
- [1, 0, 0, 1, 0]
-wevo - INFO - WEVO ran for 3 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 27881.05146021654
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 31671.573249857185 accepted
-wevo - INFO - variance after selection: 31671.877343038726
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 35312.78830951584 accepted
-wevo - INFO - variance after selection: 35315.64651165467
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 39050.59874314827 accepted
-wevo - INFO - variance after selection: 39048.19739231413
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 42933.1187988666 accepted
-wevo - INFO - variance after selection: 42936.41786334849
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 46879.85718224966 accepted
-wevo - INFO - variance after selection: 46878.629802343225
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 50892.2078927882 accepted
-wevo - INFO - variance after selection: 50860.128297046125
-wevo - INFO - Running cycle 7
-wevo - INFO - Variance move to 54998.51657841428 accepted
-wevo - INFO - variance after selection: 54981.37667994708
-wevo - INFO - Running cycle 8
-wevo - INFO - Variance move to 58427.460119839154 accepted
-wevo - INFO - variance after selection: 58425.766478619415
-wevo - INFO - Running cycle 9
-wevo - INFO - Variance move to 60571.96266824461 accepted
-wevo - INFO - variance after selection: 60489.5493248277
-wevo - INFO - Running cycle 10
-wevo - INFO - Variance move to 63464.12483524252 accepted
-wevo - INFO - variance after selection: 63461.28281268792
-wevo - INFO - Running cycle 11
-wevo - INFO - Variance move to 65997.79803859195 accepted
-wevo - INFO - variance after selection: 65994.22828405234
-wevo - INFO - Running cycle 12
-wevo - INFO - Variance move to 67749.38416873323 accepted
-wevo - INFO - variance after selection: 67744.58641892843
-wevo - INFO - Running cycle 13
-wevo - INFO - Variance move to 68291.24998770904 accepted
-wevo - INFO - variance after selection: 68002.65323370788
-wevo - INFO - Running cycle 14
-wevo - INFO - Variance move to 69314.92492547487 accepted
-wevo - INFO - variance after selection: 69309.08396297466
-wevo - INFO - Running cycle 15
-wevo - INFO - Variance move to 69404.76276258337 accepted
-wevo - INFO - variance after selection: 69251.53198315595
-wevo - INFO - Running cycle 16
-wevo - INFO - Variance move to 69962.0347079175 accepted
-wevo - INFO - variance after selection: 69955.04867167847
-wevo - INFO - Running cycle 17
-wevo - INFO - 
-To merge: 46 total: 16 being merged 
- [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [23, 10, 28, 39, 0, 1, 3, 4], [], [], [], [], [], [], [38, 12, 24, 8, 2, 5, 11, 9], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
-wevo - INFO - 
-To split: 46 total: 16 being split 
- [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-wevo - INFO - WEVO ran for 17 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 7.013031264651296
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 12.411045437704848 accepted
-wevo - INFO - variance after selection: 12.02772784377568
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 16.141301283233545 accepted
-wevo - INFO - variance after selection: 17.04015239824337
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 19.831963753907992 accepted
-wevo - INFO - variance after selection: 19.965276996416158
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 22.723073371782714 accepted
-wevo - INFO - variance after selection: 22.444649437022786
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 23.740991761861576 accepted
-wevo - INFO - variance after selection: 23.26976535965528
-wevo - INFO - Running cycle 6
-wevo - INFO - Not productive
-wevo - INFO - 
-To merge: 8 total: 5 being merged 
- [[], [], [], [], [], [], [], [1, 4, 5, 3, 6]]
-wevo - INFO - 
-To split: 8 total: 5 being split 
- [3, 0, 2, 0, 0, 0, 0, 0]
-wevo - INFO - WEVO ran for 6 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 23401.623193838837
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 27015.423854474142 accepted
-wevo - INFO - variance after selection: 27011.58102818973
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 30499.170754199436 accepted
-wevo - INFO - variance after selection: 30501.44005422264
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 33968.27198844564 accepted
-wevo - INFO - variance after selection: 33962.670111750944
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 37668.37224502521 accepted
-wevo - INFO - variance after selection: 37668.2832864075
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 40979.18040271088 accepted
-wevo - INFO - variance after selection: 40964.82721455061
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 43758.55944505003 accepted
-wevo - INFO - variance after selection: 43676.1706855844
-wevo - INFO - Running cycle 7
-wevo - INFO - Variance move to 46371.575237425895 accepted
-wevo - INFO - variance after selection: 46324.23389375853
-wevo - INFO - Running cycle 8
-wevo - INFO - Variance move to 48187.902847424906 accepted
-wevo - INFO - variance after selection: 48116.755164866845
-wevo - INFO - Running cycle 9
-wevo - INFO - Variance move to 50251.09522284509 accepted
-wevo - INFO - variance after selection: 50233.72107036324
-wevo - INFO - Running cycle 10
-wevo - INFO - Variance move to 51371.38946671998 accepted
-wevo - INFO - variance after selection: 51279.080274089276
-wevo - INFO - Running cycle 11
-wevo - INFO - Variance move to 53058.37733842495 accepted
-wevo - INFO - variance after selection: 52975.01593445069
-wevo - INFO - Running cycle 12
-wevo - INFO - Not productive
-wevo - INFO - 
-To merge: 41 total: 11 being merged 
- [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [31, 25, 17, 3, 12, 5, 4, 0, 1, 10], [], [], [], [], [37], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
-wevo - INFO - 
-To split: 41 total: 11 being split 
- [0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0]
+To split: 2 total: 0 being split 
+ [0, 0]
+wevo - INFO - Starting variance optimization: 1420.8715971062818
 wevo - INFO - WEVO ran for 12 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 71.19780607288841
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 107.75179875739776 accepted
-wevo - INFO - variance after selection: 107.29377794938924
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 141.10560964277659 accepted
-wevo - INFO - variance after selection: 141.11955493780457
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 174.3196440845033 accepted
-wevo - INFO - variance after selection: 173.9581889239181
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 211.97815790756502 accepted
-wevo - INFO - variance after selection: 210.79554432305173
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 251.34277179931019 accepted
-wevo - INFO - variance after selection: 251.3240229940682
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 285.388899489248 accepted
-wevo - INFO - variance after selection: 285.06225840954164
-wevo - INFO - Running cycle 7
-wevo - INFO - Not productive
 wevo - INFO - 
-To merge: 11 total: 6 being merged 
- [[], [], [], [], [], [], [], [], [4, 7, 10, 2, 5, 0], [], []]
+To merge: 17 total: 11 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [14, 11, 4, 1, 3, 2, 13, 9, 8, 15, 7]]
 wevo - INFO - 
-To split: 11 total: 6 being split 
- [0, 4, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+To split: 17 total: 11 being split 
+ [7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 10400.743634054208
+wevo - INFO - WEVO ran for 8 cycles
+wevo - INFO - 
+To merge: 23 total: 7 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [16, 6], [], [], [], [], [], [], [], [], [], [], [], [15, 19, 0, 2, 4]]
+wevo - INFO - 
+To split: 23 total: 7 being split 
+ [0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 73482.89270668199
 wevo - INFO - WEVO ran for 7 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 13849.255435558478
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 15942.190363782545 accepted
-wevo - INFO - variance after selection: 15943.021391481661
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 17941.31695306201 accepted
-wevo - INFO - variance after selection: 17940.52488218298
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 19915.752607337407 accepted
-wevo - INFO - variance after selection: 19908.72839304518
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 22059.10014935531 accepted
-wevo - INFO - variance after selection: 22054.593734436698
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 24079.164313391742 accepted
-wevo - INFO - variance after selection: 24074.491733718685
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 25233.63555515006 accepted
-wevo - INFO - variance after selection: 25218.10454140725
-wevo - INFO - Running cycle 7
-wevo - INFO - Variance move to 26454.464278272062 accepted
-wevo - INFO - variance after selection: 26372.975960612977
-wevo - INFO - Running cycle 8
-wevo - INFO - Variance move to 27165.58354862786 accepted
-wevo - INFO - variance after selection: 27109.67481708497
-wevo - INFO - Running cycle 9
-wevo - INFO - Variance move to 28175.216984343755 accepted
-wevo - INFO - variance after selection: 28154.14172018757
-wevo - INFO - Running cycle 10
-wevo - INFO - Variance move to 28310.043757413372 accepted
-wevo - INFO - variance after selection: 28233.735057443657
-wevo - INFO - Running cycle 11
-wevo - INFO - Variance move to 28477.251544706894 accepted
-wevo - INFO - variance after selection: 28402.89967090144
-wevo - INFO - Running cycle 12
-wevo - INFO - Not productive
 wevo - INFO - 
-To merge: 36 total: 11 being merged 
- [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [15, 19, 13, 8, 2, 10, 5, 3, 6, 7], [], [], [], [], [], [], [], [], [], [], [], [], [12], [], [], [], []]
+To merge: 50 total: 6 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [37, 2, 9, 8, 4, 7], []]
 wevo - INFO - 
-To split: 36 total: 11 being split 
- [5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-wevo - INFO - WEVO ran for 12 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 105.94580110941546
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 191.03428457978512 accepted
-wevo - INFO - variance after selection: 191.03452168251962
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 243.4319060734541 accepted
-wevo - INFO - variance after selection: 243.21530418078777
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 310.82862481218615 accepted
-wevo - INFO - variance after selection: 305.5610876002259
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 335.9847687513652 accepted
-wevo - INFO - variance after selection: 335.5588799738942
-wevo - INFO - Running cycle 5
-wevo - INFO - Not productive
+To split: 50 total: 6 being split 
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 9.706197258770643e-08
+wevo - INFO - WEVO ran for 1 cycles
 wevo - INFO - 
-To merge: 7 total: 4 being merged 
- [[], [], [], [], [], [], [0, 3, 5, 2]]
+To merge: 2 total: 0 being merged 
+ [[], []]
 wevo - INFO - 
-To split: 7 total: 4 being split 
- [0, 2, 0, 0, 2, 0, 0]
+To split: 2 total: 0 being split 
+ [0, 0]
+wevo - INFO - Starting variance optimization: 2113.58402577425
 wevo - INFO - WEVO ran for 5 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 18594.530692573244
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 21452.831015785494 accepted
-wevo - INFO - variance after selection: 21452.534666596937
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 24192.19367835833 accepted
-wevo - INFO - variance after selection: 24194.057868816366
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 26900.502817286753 accepted
-wevo - INFO - variance after selection: 26894.57346946641
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 29817.16751115749 accepted
-wevo - INFO - variance after selection: 29818.261927303265
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 32291.941917696087 accepted
-wevo - INFO - variance after selection: 32265.83452318467
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 34470.86502841031 accepted
-wevo - INFO - variance after selection: 34443.30466065631
-wevo - INFO - Running cycle 7
-wevo - INFO - Variance move to 36526.95672487465 accepted
-wevo - INFO - variance after selection: 36510.68459708587
-wevo - INFO - Running cycle 8
-wevo - INFO - Variance move to 38201.92869749157 accepted
-wevo - INFO - variance after selection: 38193.36246873526
-wevo - INFO - Running cycle 9
-wevo - INFO - Variance move to 39816.164062713186 accepted
-wevo - INFO - variance after selection: 39812.13482502161
-wevo - INFO - Running cycle 10
-wevo - INFO - Variance move to 40844.0933779153 accepted
-wevo - INFO - variance after selection: 40710.45830848742
-wevo - INFO - Running cycle 11
-wevo - INFO - Variance move to 43861.731328139496 accepted
-wevo - INFO - variance after selection: 43873.36191225744
-wevo - INFO - Running cycle 12
-wevo - INFO - Variance move to 44714.024520398874 accepted
-wevo - INFO - variance after selection: 44707.98339837553
-wevo - INFO - Running cycle 13
-wevo - INFO - Variance move to 45239.267727781145 accepted
-wevo - INFO - variance after selection: 45232.559224271026
-wevo - INFO - Running cycle 14
-wevo - INFO - Not productive
 wevo - INFO - 
-To merge: 37 total: 13 being merged 
- [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [19, 15, 12, 21, 9, 8, 7, 6, 1, 11, 3, 0], [], [], [], [], [], [], [], [], [18], [], [], [], [], [], [], []]
+To merge: 16 total: 4 being merged 
+ [[], [], [], [], [], [], [4, 0, 1, 3], [], [], [], [], [], [], [], [], []]
 wevo - INFO - 
-To split: 37 total: 13 being split 
- [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-wevo - INFO - WEVO ran for 14 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 271.37754340704777
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 410.9076870180411 accepted
-wevo - INFO - variance after selection: 411.0025465155128
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 495.13143326513625 accepted
-wevo - INFO - variance after selection: 493.8564552071804
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 560.0179644293754 accepted
-wevo - INFO - variance after selection: 554.9658077052692
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 629.3890537031695 accepted
-wevo - INFO - variance after selection: 606.3251493620978
-wevo - INFO - Running cycle 5
-wevo - INFO - Not productive
+To split: 16 total: 4 being split 
+ [0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 10896.390433224613
+wevo - INFO - WEVO ran for 17 cycles
 wevo - INFO - 
-To merge: 10 total: 4 being merged 
- [[], [], [], [], [], [], [], [], [], [2, 4, 5, 8]]
+To merge: 23 total: 16 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [19, 9, 20], [], [], [], [], [6, 4, 0, 11, 13, 16, 12, 15, 5, 8, 3, 10, 7]]
 wevo - INFO - 
-To split: 10 total: 4 being split 
- [0, 2, 0, 0, 0, 0, 2, 0, 0, 0]
-wevo - INFO - WEVO ran for 5 cycles
-wevo - INFO - Using greedy merge algorithm
-wevo - INFO - Starting variance optimization: 13854.708953709885
-wevo - INFO - Running cycle 1
-wevo - INFO - Variance move to 16386.751364922526 accepted
-wevo - INFO - variance after selection: 16387.23309989258
-wevo - INFO - Running cycle 2
-wevo - INFO - Variance move to 18799.74584612618 accepted
-wevo - INFO - variance after selection: 18789.93269847377
-wevo - INFO - Running cycle 3
-wevo - INFO - Variance move to 21242.541658252994 accepted
-wevo - INFO - variance after selection: 21214.05665696869
-wevo - INFO - Running cycle 4
-wevo - INFO - Variance move to 23772.944099071065 accepted
-wevo - INFO - variance after selection: 23767.818914720025
-wevo - INFO - Running cycle 5
-wevo - INFO - Variance move to 25579.55358606072 accepted
-wevo - INFO - variance after selection: 25514.652337368985
-wevo - INFO - Running cycle 6
-wevo - INFO - Variance move to 28232.6254551664 accepted
-wevo - INFO - variance after selection: 28179.78661227987
-wevo - INFO - Running cycle 7
-wevo - INFO - Variance move to 30313.08785375129 accepted
-wevo - INFO - variance after selection: 30312.80902709513
-wevo - INFO - Running cycle 8
-wevo - INFO - Variance move to 32231.527707054487 accepted
-wevo - INFO - variance after selection: 32231.077693498628
-wevo - INFO - Running cycle 9
-wevo - INFO - Variance move to 33936.17518132984 accepted
-wevo - INFO - variance after selection: 33935.66576209095
-wevo - INFO - Running cycle 10
-wevo - INFO - Variance move to 35427.25155145307 accepted
-wevo - INFO - variance after selection: 35426.67932495298
-wevo - INFO - Running cycle 11
-wevo - INFO - Variance move to 36825.42323763446 accepted
-wevo - INFO - variance after selection: 36824.77150269563
-wevo - INFO - Running cycle 12
-wevo - INFO - Variance move to 38375.40384816303 accepted
-wevo - INFO - variance after selection: 38374.755230719034
-wevo - INFO - Running cycle 13
-wevo - INFO - Variance move to 39876.980672788995 accepted
-wevo - INFO - variance after selection: 39876.327719756606
-wevo - INFO - Running cycle 14
-wevo - INFO - Variance move to 40644.78390118726 accepted
-wevo - INFO - variance after selection: 40612.82076645641
-wevo - INFO - Running cycle 15
-wevo - INFO - Variance move to 42129.44049398574 accepted
-wevo - INFO - variance after selection: 42128.799021444254
-wevo - INFO - Running cycle 16
-wevo - INFO - Variance move to 42413.8050222897 accepted
-wevo - INFO - variance after selection: 42375.35092598653
-wevo - INFO - Running cycle 17
-wevo - INFO - Variance move to 46277.38683582541 accepted
-wevo - INFO - variance after selection: 46277.38683582541
-wevo - INFO - Running cycle 18
-wevo - INFO - Variance move to 46352.73042754855 accepted
-wevo - INFO - variance after selection: 46343.75093659814
-wevo - INFO - Running cycle 19
-wevo - INFO - Not productive
+To split: 23 total: 16 being split 
+ [0, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 3, 0, 0, 0, 0]
+wevo - INFO - Starting variance optimization: 49871.58962941115
+wevo - INFO - WEVO ran for 9 cycles
 wevo - INFO - 
-To merge: 33 total: 18 being merged 
- [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [20, 19, 21, 12, 13, 0, 1, 4, 5, 3, 6, 7, 11, 10, 8], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [16, 2, 10], []]
+To merge: 47 total: 8 being merged 
+ [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [36, 33, 18, 0], [], [], [30, 32, 3, 0], []]
 wevo - INFO - 
-To split: 33 total: 18 being split 
- [0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-wevo - INFO - WEVO ran for 19 cycles
+To split: 47 total: 8 being split 
+ [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0]
