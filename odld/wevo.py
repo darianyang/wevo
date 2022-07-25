@@ -531,8 +531,8 @@ class WEVO:
         # resampling_data, variation = self.decide(num_walker_copies, distance_matrix)
 
         split, merge, variation = self.decide(num_walker_copies, distance_matrix)
-        logger.info(f"\nTo merge: {len(merge)} total \n {merge}")
-        logger.info(f"\nTo split: {len(split)} total \n {split}")
+        logger.info(f"\nTo merge: {len(merge)} total: {np.sum([len(i) for i in merge])} being merged \n {merge}")
+        logger.info(f"\nTo split: {len(split)} total: {np.sum(split)} being split \n {split}")
         logger.info(f"WEVO ran for {self.count} cycles")
 
 
@@ -566,7 +566,7 @@ if __name__ == '__main__':
 
     # from odld (some get stuck e.g. iteration 20), infinite opt with same merge groups
     # TODO: test 2D and 3D pcoords (should work since distance matrix is Euclidean-based)
-    iteration = 3
+    iteration = 20
     print(f"\nTesting ODLD WE Iteration {iteration}")
     import h5py
     f = h5py.File("west_default.h5", "r")
@@ -590,6 +590,12 @@ if __name__ == '__main__':
 
     # TODO: no split merge decisions at low ODLD iterations (1-4)
     # seems like initial splitting needed for wevo to start working
+    # or a larger amount of initial walkers (needs more knobs to optimize)
+
+    # TODO: sometimes the split merge amounts aren't consistent in full westpa run
+    # why is this the case? maybe because of the binning scheme
+
+    # TODO: in westpa the weights begin to not add to 1 after n iterations
 
     """
     1. get distance matrix (_all_to_all_distance)
