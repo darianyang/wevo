@@ -270,6 +270,9 @@ class WEVODriver(WEDriver):
                 print(f"Final variation value after {resample.count} wevo cycles: ", variation)
 
                 # go through each seg and split merge
+                segs = 0
+                splitting = 0
+                merging = 0
                 for i, seg in enumerate(segments):
                     #print("split: ", split[i])
                     #print("merge len: ", len(merge[i]))
@@ -279,13 +282,19 @@ class WEVODriver(WEDriver):
                     # here I'm doing them both on a segment-by-segment basis
                     if split[i] != 0:
                         self._split_by_wevo(bin, seg, split[i])
+                        #self._split_by_wevo(bin, seg, split[i] - 1)
+                        splitting += split[i]
                     if len(merge[i]) != 0:
                         # list of all segs objects in the current merge list element
                         to_merge = [segment for num, segment in enumerate(segments) if num in merge[i]]
+                        
                         # cumul_weight should be the total weights of all the segments being merged
                         #cumul_weight = np.add.accumulate(weights)
                         #self._merge_by_wevo(bin, to_merge, cumul_weight)
                         self._merge_by_wevo(bin, to_merge)
+                        merging += len(to_merge)
+                    
+                    segs += 1
 
                 # make bin target count consistent via splitting high weight and merging low weight
                 # TODO: maybe do this with variance sorting instead of weight sorting?
@@ -293,6 +302,7 @@ class WEVODriver(WEDriver):
                 #     self._adjust_count(ibin)
 
                 print("Final weight sum: ", np.sum(weights))
+                print(f"Total = {segs}, splitting = {splitting}, merging = {merging}")
 
                 # TODO: temp fix for no initial splitting needed for wevo to start working
                 # i.e. no wevo cycles were able to run

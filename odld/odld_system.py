@@ -19,8 +19,8 @@ log = logging.getLogger("westpa.rc")
 # THESE ARE THE FOUR THINGS YOU SHOULD CHANGE
 pcoord_len = 21
 pcoord_dtype = np.float32
-bintargetcount = 10  # number of walkers per bin
-nbins = [10]  # You will have prod(binsperdim)+numberofdim*(2*splitIsolated) bins total
+bintargetcount = 50  # number of walkers per bin
+nbins = [1]  # You will have prod(binsperdim)+numberofdim*(2*splitIsolated) bins total
 
 # wevo settings
 #bintargetcount = 100  # number of walkers per bin

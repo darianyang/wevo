@@ -13,5 +13,5 @@ def check_agg_time(h5, last_iter=None):
     else:
         print(np.sum(particles))
 
-check_agg_time("west_default100.h5", last_iter=63)
-check_agg_time("21i/west.h5")
+check_agg_time("west.h5", last_iter=273)
+check_agg_time("200i_1bin/west.h5")
