@@ -265,7 +265,7 @@ class WEVODriver(WEDriver):
                 #     self._merge_by_diff(bin, to_merge, cumul_weight)
 
                 # run wevo and do split merge based on wevo decisions
-                resample = WEVO(pcoords[:,0], weights, merge_dist=0.5, char_dist=1.13)
+                resample = WEVO(pcoords[:,0], weights, merge_dist=0.5, char_dist=1.13, merge_alg="pairs")
                 split, merge, variation = resample.resample()
                 print(f"Final variation value after {resample.count} wevo cycles: ", variation)
 
@@ -273,13 +273,15 @@ class WEVODriver(WEDriver):
                 segs = 0
                 splitting = 0
                 merging = 0
+                
+                # TODO: need to make sure the index is consistent
                 for i, seg in enumerate(segments):
-                    #print("split: ", split[i])
-                    #print("merge len: ", len(merge[i]))
+                    #print(f"seg {i}: split: {split[i]} merge: {merge[i]}")
+                    #print(f"pcoord val: {seg.pcoord[0]}, weight: {seg.weight}, parent: {seg.parent_id}")
+                    
                     # split into n walkers based on split value
                     
-                    # TODO: should I split or merge first? does order matter?
-                    # here I'm doing them both on a segment-by-segment basis
+                    # split or merge on a segment-by-segment basis
                     if split[i] != 0:
                         self._split_by_wevo(bin, seg, split[i])
                         #self._split_by_wevo(bin, seg, split[i] - 1)

@@ -300,7 +300,7 @@ class WEVO:
 
     def _find_eligible_merge_pairs(self, weights, distance_matrix, max_var_idx, num_walker_copies):
         """ 
-        Find pairs of walkers that are eligible to be merged.
+        Find pairs of walkers that are eligible to be merged. (TODO)
         
         Parameters
         ----------
@@ -330,7 +330,7 @@ class WEVO:
                 if i != max_var_idx and j != max_var_idx:
                     if num_walker_copies[i] == 1 and num_walker_copies[j] == 1:
                         if weights[i] + weights[j] < self.pmax:
-                            if distance_matrix[i][j] < self.merge_dist:
+                            if distance_matrix[i,j] < self.merge_dist:
                                 eligible_pairs.append((i,j))
 
         return eligible_pairs
@@ -415,6 +415,8 @@ class WEVO:
             if self.merge_alg == 'pairs':
                 # default use greedy for now (original REVO implementation)
 
+                # a list of all suitable pairs is generated and the pair that 
+                # minimizes the expected variation loss is chosen.
                 pot_merge_pairs = self._find_eligible_merge_pairs(new_walker_weights,
                                                                   distance_matrix, 
                                                                   max_idx, 
@@ -532,16 +534,10 @@ class WEVO:
                     # in the merge group that was just squashed
                     merge_groups[keep_idx].extend(merge_groups[squash_idx])
 
-                    # TODO: somewhere around here, make sure that the merge groups being
-                    # added are not already present in the group
-                    # with ODLD i20 it seems like walker 8 is constantly being added, resulting
-                    # in an infinite loop with increasing variance
-
                     # reset the merge group that was just squashed to empty
                     merge_groups[squash_idx] = []
 
-                    # increase the number of clones that the cloned
-                    # walker has
+                    # increase the number of clones that the cloned walker has
                     walker_clone_nums[max_idx] += 1
 
                     # new variation for starting new stage
@@ -670,11 +666,13 @@ if __name__ == '__main__':
     # seems like initial splitting needed for wevo to start working
     # because: needs larger amount of initial walkers (needs more knobs to optimize)
 
-    # TODO: in westpa the weights begin to not add to 1 after n iterations
-    # make sure the split and merge operations/order are accurate
-    # the parent_ids being saved in west.h5 may also not be accurate
-
     # TODO: the total segments are not conserved, should be constant but increases
+    # sometimes will split more than merge (for greedy)
+    # for pairs, seems to be constant split and merge amounts but the final segments
+    # may increase or decrease
+
+    # TODO: check greedy and pairs parents for merging
+    # I already checked splitting parents and it all looked okay (so may be a splitting issue)
 
     """ WEVO
     1. get distance matrix (_all_to_all_distance)
