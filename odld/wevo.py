@@ -609,8 +609,8 @@ class WEVO:
 
         split, merge, variation = self.decide(num_walker_copies, distance_matrix)
         logger.info(f"WEVO ran for {self.count} cycles")
-        logger.info(f"\nTo merge: {len(merge)} total: {np.sum([len(i) for i in merge])} being merged \n {merge}")
         logger.info(f"\nTo split: {len(split)} total: {np.sum(split)} being split \n {split}")
+        logger.info(f"\nTo merge: {len(merge)} total: {np.sum([len(i) for i in merge])} being merged \n {merge}")
         #logger.info(f"Final variation = {variation}\n")
 
 

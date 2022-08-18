@@ -179,6 +179,33 @@ class WEVODriver(WEDriver):
         bin.add(new_segment)
 
 
+    def _adjust_count(self, ibin):
+        '''
+        TODO: adjust to sort/adjust by variance, not weight.
+        '''
+        bin = self.next_iter_binning[ibin]
+        target_count = self.bin_target_counts[ibin]
+        weight_getter = operator.attrgetter('weight')
+
+        # split        
+        while len(bin) < target_count:
+            log.debug('adjusting counts by splitting')
+            # always split the highest variance walker into two
+            segments = sorted(bin, key=weight_getter)
+            bin.remove(segments[-1])
+            new_segments_list = self._split_walker(segments[-1], 2, bin)
+            bin.update(new_segments_list)
+            
+        # merge
+        while len(bin) > target_count:
+            log.debug('adjusting counts by merging')
+            # always merge the two lowest variance walkers
+            segments = sorted(bin, key=weight_getter)
+            bin.difference_update(segments[:2])
+            merged_segment, parent = self._merge_walkers(segments[:2], cumul_weight=None, bin=bin)
+            bin.add(merged_segment)
+
+
     def _run_we(self):
         '''
         Run recycle/split/merge. Do not call this function directly; instead, use
@@ -193,12 +220,12 @@ class WEVODriver(WEDriver):
         # TODO: wevo is really only using one bin
         # ibin only needed right now for temp split merge option (TODO)
         for ibin, bin in enumerate(self.next_iter_binning):
-            # TODO: is this needed?
+            
+            # TODO: is this needed? skips empty bins probably
             if len(bin) == 0:
                 continue
-            else:
-                # TODO: maybe also pull iter number and put into wevo log?
 
+            else:
                 # this will just get you the final pcoord for each segment... which may not be enough
                 segments = np.array(sorted(bin, key=operator.attrgetter('weight')), dtype=np.object_)
                 pcoords = np.array(list(map(operator.attrgetter('pcoord'), segments)))
@@ -244,6 +271,7 @@ class WEVODriver(WEDriver):
                 print("pcoords", pcoords[:,0])
                 #print("current pcoords", curr_pcoords)
                 print("weights", weights)
+                print("Initial weight sum: ", np.sum(weights))
                 #print("log_weights", log_weights)
                 #print("diffs", diffs)
                 #print("scaled_diffs", scaled_diffs)
@@ -300,10 +328,10 @@ class WEVODriver(WEDriver):
 
                 # make bin target count consistent via splitting high weight and merging low weight
                 # TODO: maybe do this with variance sorting instead of weight sorting?
-                # if self.do_adjust_counts:
-                #     self._adjust_count(ibin)
+                if self.do_adjust_counts:
+                    self._adjust_count(ibin)
 
-                print("Final weight sum: ", np.sum(weights))
+                #print("Initial weight sum: ", np.sum(weights))
                 print(f"Total = {segs}, splitting = {splitting}, merging = {merging}")
 
                 # TODO: temp fix for no initial splitting needed for wevo to start working
@@ -322,6 +350,7 @@ class WEVODriver(WEDriver):
         self._check_post()
 
         self.new_weights = self.new_weights or []
+        #print("Final weight sum: ", np.sum(self.new_weights))
 
         log.debug('used initial states: {!r}'.format(self.used_initial_states))
         log.debug('available initial states: {!r}'.format(self.avail_initial_states))
