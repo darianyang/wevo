@@ -252,6 +252,7 @@ class WEVO:
                         walker_variations[i] += partial_variation * num_walker_copies[j]
                         walker_variations[j] += partial_variation * num_walker_copies[i]
 
+        # TODO: should variation == sum(walker_variations) ?
         return variation, walker_variations
 
     def _calc_variation_loss(self, walker_variation, weights, eligible_pairs):
@@ -466,7 +467,7 @@ class WEVO:
                             merge_pair = [min_idx, closewalk]
 
             else:
-                raise ValueError('Unrecognized value for merge_alg in REVO')
+                raise ValueError('Unrecognized value for merge_alg in WEVO')
 
             # did we find a suitable pair to merge?
             if len(merge_pair) != 0:
@@ -569,7 +570,7 @@ class WEVO:
         #     walker_record['walker_idx'] = np.array([walker_idx])
 
         #return walker_actions, variations[-1]
-        return walker_clone_nums, merge_groups, variations[-1]
+        return walker_clone_nums, merge_groups, variations[-1], walker_variations
 
     def resample(self):
         """
@@ -607,11 +608,12 @@ class WEVO:
         # maximizing the variation, i.e. the Decider
         # resampling_data, variation = self.decide(num_walker_copies, distance_matrix)
 
-        split, merge, variation = self.decide(num_walker_copies, distance_matrix)
+        split, merge, variation, walker_variations= self.decide(num_walker_copies, distance_matrix)
         logger.info(f"WEVO ran for {self.count} cycles")
         logger.info(f"\nTo split: {len(split)} total: {np.sum(split)} being split \n {split}")
         logger.info(f"\nTo merge: {len(merge)} total: {np.sum([len(i) for i in merge])} being merged \n {merge}")
         #logger.info(f"Final variation = {variation}\n")
+        #logger.info(f"Final variation from walkers len = {len(walker_variations)}\n")
 
 
         # # convert the target idxs and decision_id to feature vector arrays
@@ -633,7 +635,7 @@ class WEVO:
 
         # return resampled_walkers, resampling_data, resampler_data
 
-        return split, merge, variation
+        return split, merge, variation, walker_variations
 
 
 if __name__ == '__main__':
