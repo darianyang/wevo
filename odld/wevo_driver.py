@@ -110,7 +110,9 @@ class WEVODriver(WEDriver):
 
                 # run wevo and do split merge based on wevo decisions
                 # TODO: pairs seems to not fail with assertion error while greedy tends to fail more often
-                resample = WEVO(pcoords[:,0], weights, merge_dist=0.5, char_dist=1.13, merge_alg="greedy")
+                # the reason 'greedy' fails is because extra walkers are sometimes created
+                # but happens at random so it's hard to track down the root cause
+                resample = WEVO(pcoords[:,0], weights, merge_dist=0.5, char_dist=1.13, merge_alg="pairs")
                 split, merge, variation, walker_variations = resample.resample()
                 print(f"Final variation value after {resample.count} wevo cycles: ", variation)
 
@@ -128,7 +130,7 @@ class WEVODriver(WEDriver):
                         # need an extra walker since split operation reduces total walkers by 1
                         # I think revo doesn't count the current seg
                         self._split_by_wevo(bin, seg, split[i] + 1)
-                        splitting += split[i]
+                        splitting += split[i] + 1
                     if len(merge[i]) != 0:
                         # list of all segs objects in the current merge list element
                         to_merge = [segment for num, segment in enumerate(segments) if num in merge[i]]
