@@ -1,7 +1,9 @@
 '''
 Main functions for running the WESTPA implementation of REVO (WEVO).
 
-TODO: for now, this will be a simple function for testing which will be updated later.
+A portion of this code is adapted from github.com/ADicksonLab/wepy
+MIT License | Copyright (c) 2017, 2020 ADicksonLab
+
 
 TODO: maybe eventually have something like group.py but resampler.py
       so it would take the input coordinates and output labels for split and merge
@@ -26,7 +28,7 @@ logger.addHandler(handler)
 
 class WEVO:
     '''
-    New WE esampling module based on REVO (WEVO).
+    WE resampling module based on REVO (WEVO).
 
     1. Input ensemble of walkers
     2. Run WEVO to decide which walkers to split and which to merge
@@ -492,9 +494,13 @@ class WEVO:
                 # I think this current implemetation makes sense, since you won't add to 
                 # the merge group walker position if either of the merge pair values are
                 # already appended to be merged into each other
+
                 if new_variation > variation and \
                 merge_pair[0] not in merge_groups[merge_pair[1]] and \
                 merge_pair[1] not in merge_groups[merge_pair[0]]:
+        
+                #if new_variation > variation:
+
                     variations.append(new_variation)
 
                     #logging.info("Variance move to {} accepted".format(new_variation))
@@ -557,17 +563,6 @@ class WEVO:
                     new_num_walker_copies[closewalk] = 1
                     new_num_walker_copies[max_idx] -= 1
 
-        # given we know what we want to clone to specific slots
-        # (squashing other walkers) we need to determine where these
-        # squashed walkers will be merged
-        #walker_actions = self.assign_clones(merge_groups, walker_clone_nums)
-
-        # because there is only one step in resampling here we just
-        # add another field for the step as 0 and add the walker index
-        # to its record as well
-        # for walker_idx, walker_record in enumerate(walker_actions):
-        #     walker_record['step_idx'] = np.array([0])
-        #     walker_record['walker_idx'] = np.array([walker_idx])
 
         #return walker_actions, variations[-1]
         return walker_clone_nums, merge_groups, variations[-1], walker_variations
@@ -614,26 +609,6 @@ class WEVO:
         logger.info(f"\nTo merge: {len(merge)} total: {np.sum([len(i) for i in merge])} being merged \n {merge}")
         #logger.info(f"Final variation = {variation}\n")
         #logger.info(f"Final variation from walkers len = {len(walker_variations)}\n")
-
-
-        # # convert the target idxs and decision_id to feature vector arrays
-        # for record in resampling_data:
-        #     record['target_idxs'] = np.array(record['target_idxs'])
-        #     record['decision_id'] = np.array([record['decision_id']])
-
-        # # TODO: this will be within WEVODriver (_split and _merge)
-        # # actually do the cloning and merging of the walkers
-        # resampled_walkers = self.DECISION.action(walkers, [resampling_data])
-
-        # # flatten the distance matrix and give the number of walkers
-        # # as well for the resampler data, there is just one per cycle
-        # resampler_data = [{'distance_matrix' : np.ravel(np.array(distance_matrix)),
-        #                    'num_walkers' : np.array([len(walkers)]),
-        #                    'variation' : np.array([variation]),
-        #                    'images' : np.ravel(np.array(images)),
-        #                    'image_shape' : np.array(images[0].shape)}]
-
-        # return resampled_walkers, resampling_data, resampler_data
 
         return split, merge, variation, walker_variations
 

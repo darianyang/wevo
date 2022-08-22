@@ -94,8 +94,6 @@ class WEVODriver(WEDriver):
                 segments = np.array(sorted(bin, key=operator.attrgetter('weight')), dtype=np.object_)
                 pcoords = np.array(list(map(operator.attrgetter('pcoord'), segments)))
                 weights = np.array(list(map(operator.attrgetter('weight'), segments)))
-
-                log_weights = -1 * np.log(weights)
  
                 nsegs = pcoords.shape[0]
                 nframes = pcoords.shape[1]
@@ -104,75 +102,25 @@ class WEVODriver(WEDriver):
                 #print("before pcoords", pcoords)
                 pcoords = pcoords.reshape(nsegs,nframes)
                 #print("after pcoords", pcoords)
-
-                # # this will allow you to get the pcoords for all frames
-                # these setps may not be needed with wevo (TODO)
-                # current_iter_segments = self.current_iter_segments
-
-                # curr_segments = np.array(sorted(current_iter_segments, key=operator.attrgetter('weight')), dtype=np.object_)
-                # curr_pcoords = np.array(list(map(operator.attrgetter('pcoord'), curr_segments)))
-                # curr_weights = np.array(list(map(operator.attrgetter('weight'), curr_segments)))
-
-                # log_weights = -1 * np.log(weights)
- 
-                # nsegs = pcoords.shape[0]
-                # nframes = pcoords.shape[1]
-
-                #diffs = np.zeros((nsegs))
-
-                # for wevo, I don't need all pcoords, just the final pcoord vals
-                #curr_pcoords = curr_pcoords.reshape(nsegs,nframes)
-                
-                # # find percent change between first and last frame
-                # for idx, ival in enumerate(curr_pcoords):
-                #     diff = ((ival[-1] - ival[0]) / ival[0]) * 100
-                #     diffs[idx] = diff
-                # diffs[diffs > 0] = 0
-                # init_check = np.any(diffs)
-                # scaled_diffs = diffs * log_weights
                 
                 # print for sanity check
                 print("pcoords", pcoords[:,0])
-                #print("current pcoords", curr_pcoords)
                 print("weights", weights)
                 print("Initial weight sum: ", np.sum(weights))
-                #print("log_weights", log_weights)
-                #print("diffs", diffs)
-                #print("scaled_diffs", scaled_diffs)
-
-                # if init_check:
-
-                #     # split walker with largest scaled diff
-                #     split_into = 2
-                #     to_split_index = self._segment_index_converter("split", pcoords, curr_pcoords, scaled_diffs)
-                #     to_split = segments[to_split_index]
-
-                #     self._split_by_diff(bin, to_split, split_into)
-    
-                #     # merge walker with lowest scaled diff into next lowest
-                #     cumul_weight = np.add.accumulate(weights)
-                #     to_merge_index = self._segment_index_converter("merge", pcoords, curr_pcoords, scaled_diffs)
-                #     to_merge = segments[to_merge_index]
-
-                #     self._merge_by_diff(bin, to_merge, cumul_weight)
 
                 # run wevo and do split merge based on wevo decisions
                 # TODO: pairs seems to not fail with assertion error while greedy tends to fail more often
-                resample = WEVO(pcoords[:,0], weights, merge_dist=0.5, char_dist=1.13, merge_alg="pairs")
+                resample = WEVO(pcoords[:,0], weights, merge_dist=0.5, char_dist=1.13, merge_alg="greedy")
                 split, merge, variation, walker_variations = resample.resample()
                 print(f"Final variation value after {resample.count} wevo cycles: ", variation)
 
-                # go through each seg and split merge
+                # count each operation and segment as a check
                 segs = 0
                 splitting = 0
                 merging = 0
-                
-                # TODO: need to make sure the index is consistent
+
+                # go through each seg and split merge
                 for i, seg in enumerate(segments):
-                    #print(f"seg {i}: split: {split[i]} merge: {merge[i]}")
-                    #print(f"pcoord val: {seg.pcoord[0]}, weight: {seg.weight}, parent: {seg.parent_id}")
-                    
-                    # split into n walkers based on split value
                     
                     # split or merge on a segment-by-segment basis
                     if split[i] != 0:
@@ -189,14 +137,13 @@ class WEVODriver(WEDriver):
                         to_merge.append(seg)
                         
                         # cumul_weight should be the total weights of all the segments being merged
-                        #cumul_weight = np.add.accumulate(weights)
-                        #self._merge_by_wevo(bin, to_merge, cumul_weight)
+                        # cumul_weight is calculated automatically if not given
                         self._merge_by_wevo(bin, to_merge)
                         merging += len(to_merge)
                     
                     segs += 1
 
-                print("Length of bin post WEVO: ", self.next_iter_binning[ibin])
+                print("Bin attrs post WEVO: ", self.next_iter_binning[ibin])
                 #print(f"Final variation from walkers len = {len(walker_variations)}\n")
                 # make bin target count consistent via splitting high weight and merging low weight
                 # TODO: maybe do this with variance sorting instead of weight sorting?
@@ -204,7 +151,6 @@ class WEVODriver(WEDriver):
                 #if self.do_adjust_counts:
                 #    self._adjust_count(ibin)
 
-                #print("Initial weight sum: ", np.sum(weights))
                 print(f"Total = {segs}, splitting = {splitting}, merging = {merging}")
 
                 # TODO: print to check that min and max prob are being controlled by wevo
@@ -226,7 +172,6 @@ class WEVODriver(WEDriver):
         self._check_post()
 
         self.new_weights = self.new_weights or []
-        #print("Final weight sum: ", np.sum(self.new_weights))
 
         log.debug('used initial states: {!r}'.format(self.used_initial_states))
         log.debug('available initial states: {!r}'.format(self.avail_initial_states))
