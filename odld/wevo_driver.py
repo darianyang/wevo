@@ -95,24 +95,39 @@ class WEVODriver(WEDriver):
                 pcoords = np.array(list(map(operator.attrgetter('pcoord'), segments)))
                 weights = np.array(list(map(operator.attrgetter('weight'), segments)))
  
-                nsegs = pcoords.shape[0]
-                nframes = pcoords.shape[1]
+                # TODO: how to handle nd arrays > n = 1 ?
+                #print("PCOORD SHAPE: ", pcoords.shape)
+
+                # make the pcoord input uniform and >=3d
+                # because with more than 1 pcoord, all pcoord arrays will be 3d
+                # I think it is already the case where even 1d pcoords are 3d arrays
+                # so this might not be necessary
+                pcoords = np.atleast_3d(pcoords)
+
+                #nsegs = pcoords.shape[0]
+                #nframes = pcoords.shape[1]
+                #ndims = pcoords.shape[2]
                 
+                # pcoord for the last frame of previous iteration
+                # or the first frame of current iteration
+                pcoords = pcoords[:,0,:]
+
                 #print("weights", weights)
                 #print("before pcoords", pcoords)
-                pcoords = pcoords.reshape(nsegs,nframes)
+                #pcoords = pcoords.reshape(nsegs,nframes)
                 #print("after pcoords", pcoords)
                 
                 # print for sanity check
-                print("pcoords", pcoords[:,0])
+                print("pcoords", pcoords.reshape(-1))
                 print("weights", weights)
                 print("Initial weight sum: ", np.sum(weights))
 
                 # run wevo and do split merge based on wevo decisions
+                # TODO: get merge_dista/char_dist/merge_alg/other wevo parameters from west.cfg
                 # TODO: pairs seems to not fail with assertion error while greedy tends to fail more often
                 # the reason 'greedy' fails is because extra walkers are sometimes created
                 # but happens at random so it's hard to track down the root cause
-                resample = WEVO(pcoords[:,0], weights, merge_dist=0.5, char_dist=1.13, merge_alg="pairs")
+                resample = WEVO(pcoords, weights, merge_dist=0.5, char_dist=1.13, merge_alg="pairs")
                 split, merge, variation, walker_variations = resample.resample()
                 print(f"Final variation value after {resample.count} wevo cycles: ", variation)
 
@@ -150,8 +165,8 @@ class WEVODriver(WEDriver):
                 # make bin target count consistent via splitting high weight and merging low weight
                 # TODO: maybe do this with variance sorting instead of weight sorting?
                 # this shouldn't be required now that wevo is consistent in total walkers
-                #if self.do_adjust_counts:
-                #    self._adjust_count(ibin)
+                if self.do_adjust_counts:
+                    self._adjust_count(ibin)
 
                 print(f"Total = {segs}, splitting = {splitting}, merging = {merging}")
 

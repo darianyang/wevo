@@ -154,6 +154,11 @@ class WEVO:
         '''
         Calculate the pairwise all-to-all distances between segments.
         TODO: JML sort function can turn distance matrix to paired list.
+        TODO: can this handle ndarrays where n > 1 ?
+            I think so, if pcoord = [[0, 0, n],
+                                     [0, 0, n]
+                                     [0, 0, n]
+                                     [...]]
 
         Returns
         -------
