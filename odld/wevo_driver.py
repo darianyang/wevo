@@ -5,8 +5,30 @@ import operator
 from westpa.core.we_driver import WEDriver
 from wevo import WEVO
 
-log = logging.getLogger(__name__)
+######################## SET WEVO PARAMETERS ########################
 
+# mean of the distance metric used after one iteration
+# no impact on resampling behavior, only used for comparison
+# of varying distance metrics for the same system
+char_dist = 1.13
+
+# distance must be <= merge_dist before being elibigle for merging
+merge_dist = 2.5
+
+# can be 'greedy' or 'pairs'
+merge_alg = 'pairs'
+
+# min and max weights
+pmin = 1e-12
+pmax = 0.1
+
+# modifies distance and weight relative to each other in novelty function
+# 4 was found to be a reasonable value for protein ligand unbinding
+dist_exponent = 4
+
+#####################################################################
+
+log = logging.getLogger(__name__)
 
 class WEVODriver(WEDriver):
     '''
@@ -127,7 +149,8 @@ class WEVODriver(WEDriver):
                 # TODO: pairs seems to not fail with assertion error while greedy tends to fail more often
                 # the reason 'greedy' fails is because extra walkers are sometimes created
                 # but happens at random so it's hard to track down the root cause
-                resample = WEVO(pcoords, weights, merge_dist=0.5, char_dist=1.13, merge_alg="pairs")
+                resample = WEVO(pcoords, weights, merge_dist=merge_dist, char_dist=char_dist,
+                                merge_alg=merge_alg, pmin=pmin, pmax=pmax, dist_exponent=dist_exponent)
                 split, merge, variation, walker_variations = resample.resample()
                 print(f"Final variation value after {resample.count} wevo cycles: ", variation)
 
