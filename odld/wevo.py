@@ -15,9 +15,12 @@ import logging
 import random
 
 import os
+import os.path
 
-# set up logger file, start fresh
-os.remove ('wevo.log')
+# only if wevo.log exists
+if os.path.exists('wevo.log'):
+    # remove to allow starting a fresh logger file
+    os.remove ('wevo.log')
 logger = logging.getLogger('wevo')
 logger.setLevel(logging.INFO)
 handler = logging.FileHandler('wevo.log')
@@ -599,10 +602,8 @@ class WEVO:
         #distance_matrix, images = self._all_to_all_distance()
         distance_matrix = self._all_to_all_distance()
 
-        # logging.info("distance_matrix")
-        # logging.info("\n{}".format(str(np.array(distance_matrix))))
-        #logger.info("distance_matrix")
-        #logger.info("\n{}".format(str(np.array(distance_matrix))))
+        logger.info("distance_matrix")
+        logger.info("\n{}".format(str(np.array(distance_matrix))))
 
         # determine cloning and merging actions to be performed, by
         # maximizing the variation, i.e. the Decider
